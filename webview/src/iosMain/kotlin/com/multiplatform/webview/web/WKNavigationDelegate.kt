@@ -122,9 +122,7 @@ class WKNavigationDelegate(
             "Outer decidePolicyForNavigationAction: $url $isRedirect $decidePolicyForNavigationAction"
         }
         if (url != null && !isRedirect &&
-            navigator.requestInterceptor != null &&
-            decidePolicyForNavigationAction.targetFrame?.mainFrame == true
-        ) {
+            navigator.requestInterceptor != null) {
             navigator.requestInterceptor.apply {
                 val request = decidePolicyForNavigationAction.request
                 val headerMap = mutableMapOf<String, String>()
